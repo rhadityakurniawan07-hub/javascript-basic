@@ -160,3 +160,20 @@ x--;    // 39
 x /= 3; //13
 
 console.log(x);13
+
+
+
+/* Bonus Challenge */
+const tugas = 80;
+const uts = 75;
+const uas = 70;
+
+const nilaiAkhir = (tugas + uts + uas) / 3;
+const lulus = nilaiAkhir >= 75;
+
+console.log("Nilai Akhir :", nilaiAkhir);
+console.log("Lulus       :", lulus);
+
+
+
+/*  */
