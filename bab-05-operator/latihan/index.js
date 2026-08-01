@@ -174,6 +174,3 @@ const lulus = nilaiAkhir >= 75;
 console.log("Nilai Akhir :", nilaiAkhir);
 console.log("Lulus       :", lulus);
 
-
-
-/*  */
