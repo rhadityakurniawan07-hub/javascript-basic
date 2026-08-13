@@ -582,129 +582,159 @@ Pastikan saldo Budi dan Ani **terpisah**.
 
 
 # Soal Study Case - Scope, Hoisting, & Closure
-
-## 💼 Study Case 1 - Sistem Keranjang Belanja
+# Study Case 1 - Sistem Keranjang Belanja
 
 Sebuah toko online membutuhkan sistem keranjang belanja sederhana.
 
 Buat sebuah fungsi:
 
-```javascript
-buatKeranjang()
+    buatKeranjang()
 
 Keranjang harus menyimpan data produk di dalam scope-nya.
 
 Contoh penggunaan:
 
-const keranjang = buatKeranjang();
+    const keranjang = buatKeranjang();
 
-keranjang.tambah("Keyboard", 250000);
-keranjang.tambah("Mouse", 150000);
+    keranjang.tambah("Keyboard", 250000);
+    keranjang.tambah("Mouse", 150000);
 
-keranjang.lihatKeranjang();
+    keranjang.lihatKeranjang();
 
-keranjang.hapus("Mouse");
+    keranjang.hapus("Mouse");
 
-keranjang.lihatKeranjang();
+    keranjang.lihatKeranjang();
 
 Output yang diharapkan:
 
-===== KERANJANG =====
-1. Keyboard - Rp250000
-2. Mouse - Rp150000
+    ===== KERANJANG =====
+    1. Keyboard - Rp250000
+    2. Mouse - Rp150000
 
-Mouse berhasil dihapus.
+    Mouse berhasil dihapus.
 
-===== KERANJANG =====
-1. Keyboard - Rp250000
-Ketentuan
+    ===== KERANJANG =====
+    1. Keyboard - Rp250000
 
 Buat method berikut:
 
-tambah(nama, harga)
-hapus(nama)
-lihatKeranjang()
-hitungTotal()
+    tambah(nama, harga)
+    hapus(nama)
+    lihatKeranjang()
+    hitungTotal()
 
-Data produk harus bersifat private.
+Data keranjang harus bersifat **private**.
 
-Artinya, data keranjang tidak boleh dapat diakses secara langsung dari luar:
-
-console.log(keranjang.items);
-
-Hasil:
-
-undefined
-
-Gunakan konsep Closure agar method di dalam buatKeranjang() tetap dapat mengakses data keranjang.
-
-🚀 Tantangan
-
-Tambahkan method:
-
-jumlahItem()
+Artinya, data keranjang tidak boleh dapat diakses secara langsung dari luar.
 
 Contoh:
 
-console.log("Jumlah item:", keranjang.jumlahItem());
+    console.log(keranjang.items);
+
+Hasil:
+
+    undefined
+
+Gunakan konsep **Closure** agar method di dalam `buatKeranjang()` tetap dapat mengakses data keranjang.
+
+### Selanjutnya
+
+Tambahkan method:
+
+    jumlahItem()
+
+Method tersebut digunakan untuk mengetahui jumlah produk yang ada di dalam keranjang.
+
+Contoh:
+
+    console.log("Jumlah item:", keranjang.jumlahItem());
 
 Output:
 
-Jumlah item: 1
-💼 Study Case 2 - Sistem Login & Session
+    Jumlah item: 1
+
+
+# Study Case 2 - Sistem Login & Session
 
 Sebuah aplikasi membutuhkan sistem login sederhana.
 
 Buat sebuah fungsi:
 
-buatSession(username)
+    buatSession(username)
 
 Session harus menyimpan:
 
-username
-isLogin
+- `username`
+- `isLogin`
 
 Contoh penggunaan:
 
-const session = buatSession("budi123");
+    const session = buatSession("budi123");
 
-session.cekStatus();
+    session.cekStatus();
 
-session.logout();
+    session.logout();
 
-session.cekStatus();
+    session.cekStatus();
 
-Output:
+Output yang diharapkan:
 
-User: budi123
-Status: Login
+    User: budi123
+    Status: Login
 
-Logout berhasil.
+    Logout berhasil.
 
-User: budi123
-Status: Logout
-Ketentuan
+    User: budi123
+    Status: Logout
 
 Buat method berikut:
 
-cekStatus()
-logout()
-login()
+    cekStatus()
+    logout()
+    login()
 
-Data berikut harus berada di dalam scope buatSession():
+Data berikut harus berada di dalam scope `buatSession()`:
 
-username
-isLogin
+    username
+    isLogin
 
 Data tersebut tidak boleh dapat diubah secara langsung dari luar.
 
 Contoh:
 
-console.log(session.isLogin);
+    console.log(session.isLogin);
 
 Hasil:
 
-undefined
+    undefined
+
+Perubahan status login hanya boleh dilakukan melalui method yang telah dibuat.
+
+### Selanjutnya
+
+Buat dua session:
+
+    const sessionBudi = buatSession("budi123");
+    const sessionAni = buatSession("ani456");
+
+Kemudian jalankan:
+
+    sessionBudi.logout();
+
+    sessionBudi.cekStatus();
+    sessionAni.cekStatus();
+
+Output yang diharapkan:
+
+    User: budi123
+    Status: Logout
+
+    User: ani456
+    Status: Login
+
+Pastikan logout pada `sessionBudi` **tidak membuat `sessionAni` ikut logout**.
+
+
 
 ---
 
