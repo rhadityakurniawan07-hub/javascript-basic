@@ -1,9 +1,3 @@
-const sekarang = new Date();
+const tanggalSpesifik = new Date(1945, 7, 17, 10, 0);
 
-const tahun = sekarang.getFullYear();
-const bulan = sekarang.getMonth() + 1;
-const tanggal = sekarang.getDate();
-const jam = sekarang.getHours();
-const menit = sekarang.getMinutes();
-
-console.log("Tanggal:", tanggal + "-" + bulan + "-" + tahun + " " + jam + ":" + menit);
+console.log(tanggalSpesifik);
