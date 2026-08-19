@@ -1,39 +1,16 @@
-const namaProduk = "   keyboard mechanical   ";
-const hargaProduk = "750000.50";
-const kodeProduk = "PROD-2026-001";
+function checkout(...collection) {
+  console.log("Jumlah item:", collection.length);
+  console.log("Daftar belanja:", collection);
+}
 
-const namaBersih = namaProduk.trim();
-const harga = parseFloat(hargaProduk);
+checkout("Minyak", "Telur", "Mie");
+// Output: Jumlah item: 3
+// Output: Daftar belanja: ["Minyak", "Telur", "Mie"]
 
-const kodeAwal = kodeProduk.startsWith("PROD");
-const kodeAkhir = kodeProduk.endsWith("001");
+checkout("Buku");
+// Output: Jumlah item: 1
+// Output: Daftar belanja: ["Buku"]
 
-console.log("===== DATA PRODUK =====");
-console.log("Nama  :", namaBersih);
-console.log("Harga : Rp" + harga.toFixed(2));
-console.log("Kode  :", kodeProduk);
-console.log("=======================");
-
-if (namaBersih.length > 0) {
-    console.log("Nama produk valid");
-} else {
-    console.log("Nama produk tidak boleh kosong");
-};
-
-if (!isNaN(harga)) {
-    console.log("Harga valid");
-} else {
-    console.log("Harga tidak valid");
-};
-
-if (kodeAwal) {
-    console.log("Kode diawali PROD");
-} else {
-    console.log("Kode tidak diawali PROD");
-};
-
-if (kodeAkhir) {
-    console.log("Kode diakhiri 001");
-} else {
-    console.log("Kode tidak diakhiri 001");
-};
+checkout("A", "B", "C", "D", "E");
+// Output: Jumlah item: 5
+// Output: Daftar belanja: ["A", "B", "C", "D", "E"]
