@@ -1,0 +1,236 @@
+       /* ----- RESET & GLOBAL ----- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ----- CARD UTAMA ----- */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            border-bottom: 3px dashed #e2e8f0;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* ----- FORM CARD ----- */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            transition: 0.2s;
+            background: #fafcff;
+        }
+
+        input:focus {
+            border-color: #3b82f6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+
+        .char-count {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        .key-message {
+            font-size: 0.85rem;
+            color: #2563eb;
+            font-weight: 500;
+            min-height: 1.4em;
+            margin-top: 2px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            flex: 1 1 auto;
+            padding: 12px 18px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.15s;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: #1e293b;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #0f172a;
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+        .btn-secondary:hover {
+            background: #cbd5e1;
+        }
+
+        .btn-danger {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .btn-danger:hover {
+            background: #fecaca;
+        }
+
+        /* ----- DAFTAR PESERTA CARD ----- */
+        .participant-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 0.5rem;
+        }
+
+        .participant-item {
+            background: #f8fafc;
+            border-left: 5px solid #3b82f6;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: 0.2s;
+        }
+        .participant-item:hover {
+            background: #f1f5f9;
+        }
+
+        .participant-info p {
+            margin: 0.1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .participant-info strong {
+            color: #1e293b;
+        }
+
+        .participant-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-small {
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-small-danger {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .btn-small-danger:hover {
+            background: #fecaca;
+        }
+
+        .empty-message {
+            color: #94a3b8;
+            font-style: italic;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .total-badge {
+            font-weight: 700;
+            color: #1e293b;
+            background: #eef2f7;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* ----- STATUS MESSAGE DI FORM (tetap pakai display-area dari versi sebelumnya, tapi kita bisa gunakan untuk notifikasi) ----- */
+        .form-notification {
+            margin-top: 0.8rem;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            display: none;
+        }
+        .form-notification.show {
+            display: block;
+        }
+        .form-notification.success {
+            background: #dcfce7;
+            color: #059669;
+        }
+        .form-notification.error {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .participant-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .participant-actions {
+                margin-top: 6px;
+                justify-content: flex-end;
+            }
+        }
