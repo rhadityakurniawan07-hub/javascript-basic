@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #0f172a;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 20px;
+    font-size: 21px;
+    border-left: 5px solid #2563eb;
+    padding-left: 12px;
+}
+
+.card p {
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.card p strong {
+    color: #475569;
+}
+
+#daftarAktivitas {
+    list-style: none;
+    padding: 0;
+}
+
+#daftarAktivitas li {
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s ease;
+}
+
+#daftarAktivitas li:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    transform: translateX(4px);
+}
+
+button {
+    border: none;
+    padding: 8px 14px;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    #daftarAktivitas li {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+}
