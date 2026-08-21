@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #101a2a;
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    background: linear-gradient(45deg, #0f0f0f, #980303);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+    text-align: center;
+    color: #ffd21c;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 55px;
+}
+
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 30px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    font-size: 23px;
+    margin-bottom: 17px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    height: 62px;
+    border: none;
+    border-radius: 12px;
+    background-color: #36465e;
+    color: white;
+    padding: 0 20px;
+    font-size: 20px;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: #9aa4b2;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    box-shadow: 0 0 0 2px #ffd21c;
+}
+
+
+.button-group {
+    margin-top: 44px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-pesan {
+    flex: 1;
+    height: 76px;
+    border: none;
+    border-radius: 13px;
+    background-color: #ffd21c;
+    color: #111;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-pesan:hover {
+    background-color: #f5c400;
+}
+
+.btn-reset {
+    width: 180px;
+    height: 76px;
+    border: none;
+    border-radius: 13px;
+    background-color: #64748b;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-reset:hover {
+    background-color: #7b8ba3;
+}
+
+
+
+#pesan {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pesan-error {
+    color: #ff6b6b;
+}
+
+.pesan-sukses {
+    color: #4ade80;
+}
+
+
+.daftar-section {
+    margin-top: 45px;
+    background-color: #27354a;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.judul-daftar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.daftar-section h2 {
+    font-size: 28px;
+    color: #ffd21c;
+}
+
+
+.btn-hapus-semua {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background-color: #dc2626;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-hapus-semua:hover {
+    background-color: #b91c1c;
+}
+
+
+
+.pesanan-kosong {
+    color: #aeb8c7;
+    font-size: 18px;
+}
+
+.pesanan {
+    background-color: #36465e;
+    border-left: 5px solid #ffd21c;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.pesanan:last-child {
+    margin-bottom: 0;
+}
+
+.pesanan p {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.pesanan p:last-child {
+    margin-bottom: 0;
+}
+
+.pesanan strong {
+    color: #ffd21c;
+}
+
+
+.btn-hapus {
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 15px;
+    background-color: #dc2626;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-hapus:hover {
+    background-color: #b91c1c;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .form-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body {
+        padding: 30px 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .input-box label {
+        font-size: 18px;
+    }
+
+    .input-box input,
+    .input-box select {
+        height: 55px;
+        font-size: 17px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn-pesan,
+    .btn-reset {
+        width: 100%;
+    }
+
+    .judul-daftar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-hapus-semua {
+        width: 100%;
+    }
+}

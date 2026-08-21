@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Pemesanan Tiket</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Form Pemesanan Tiket</h1>
+
+        <p class="subtitle">
+            Isi formulir berikut untuk memesan tiket.
+        </p>
+
+
+        <!-- FORM PEMESANAN -->
+        <form id="formPemesanan">
+
+            <div class="form-group">
+
+                <!-- Nama -->
+                <div class="input-box">
+                    <label for="nama">Nama Lengkap</label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        placeholder="Masukkan Nama"
+                    >
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-box">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Masukkan Email"
+                    >
+                </div>
+
+
+                <!-- Film -->
+                <div class="input-box">
+                    <label for="film">Pilih Film</label>
+
+                    <select id="film">
+
+                        <option value="">
+                            Pilih Film
+                        </option>
+
+                        <option value="Moana 2">
+                            Moana 2
+                        </option>
+
+                        <option value="Avatar">
+                            Avatar
+                        </option>
+
+                        <option value="Avengers">
+                            Avengers
+                        </option>
+
+                        <option value="Upin Ipin">
+                            Upin Ipin
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Studio -->
+                <div class="input-box">
+                    <label for="studio">Studio</label>
+
+                    <select id="studio">
+
+                        <option value="">
+                            Pilih Studio
+                        </option>
+
+                        <option value="Reguler">
+                            Reguler
+                        </option>
+
+                        <option value="Premium">
+                            Premium
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Jam Tayang -->
+                <div class="input-box">
+                    <label for="jamTayang">Jam Tayang</label>
+
+                    <select id="jamTayang">
+
+                        <option value="">
+                            Pilih Jam
+                        </option>
+
+                        <option value="12.30">
+                            12.30
+                        </option>
+
+                        <option value="15.00">
+                            15.00
+                        </option>
+
+                        <option value="18.30">
+                            18.30
+                        </option>
+
+                        <option value="21.00">
+                            21.00
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Jumlah Tiket -->
+                <div class="input-box">
+                    <label for="jumlahTiket">
+                        Jumlah Tiket
+                    </label>
+
+                    <input
+                        type="number"
+                        id="jumlahTiket"
+                        min="1"
+                        value="1"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- Pesan -->
+            <p id="pesan"></p>
+
+
+            <!-- Tombol -->
+            <div class="button-group">
+
+                <button
+                    type="submit"
+                    class="btn-pesan"
+                >
+                    Konfirmasi & Bayar
+                </button>
+
+                <button
+                    type="button"
+                    id="btnReset"
+                    class="btn-reset"
+                >
+                    Reset Form
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- DAFTAR PESANAN -->
+        <section class="daftar-section">
+
+            <div class="judul-daftar">
+
+                <h2>🎫 Daftar Pesanan</h2>
+
+                <button
+                    type="button"
+                    id="btnHapusSemua"
+                    class="btn-hapus-semua"
+                >
+                    🗑️ Hapus Semua
+                </button>
+
+            </div>
+
+
+            <div id="daftarPesanan">
+
+                <p class="pesanan-kosong">
+                    Belum ada pesanan tiket.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
