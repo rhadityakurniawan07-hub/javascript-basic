@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Tema</title>
+  <style>
+    /* Mode Terang (Default) */
+    body {
+      background-color: #ffffff;
+      color: #222222;
+      transition: background-color 0.3s, color 0.3s;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    /* Mode Gelap */
+    body.gelap {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    button {
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contoh Toggle Tema</h1>
+  <button id="tombol-tema">Ubah Tema</button>
+
+  <!-- HTML -->
+<nav>
+  <a class="nav-link" href="#" data-halaman="beranda">Beranda</a>
+  <a class="nav-link" href="#" data-halaman="produk">Produk</a>
+  <a class="nav-link" href="#" data-halaman="kontak">Kontak</a>
+</nav>
+<main id="konten">
+
+
+</main>
+
+<!-- HTML -->
+<code id="kode-contoh">npm install react</code>
+<button id="tombol-salin">Salin</button>
+
+  <script>
+    // 1. Fungsi untuk menerapkan tema ke halaman & menyimpan ke localStorage
+    function simpanTema(tema) {
+      if (tema === "gelap") {
+        document.body.classList.add("gelap");
+      } else {
+        document.body.classList.remove("gelap");
+      }
+      localStorage.setItem("tema", tema);
+    }
+
+    // 2. Jalankan saat halaman pertama kali dimuat (cek tema yang tersimpan)
+    const temaTersimpan = localStorage.getItem("tema") || "terang";
+    simpanTema(temaTersimpan);
+
+    // 3. Event Listener pada tombol
+    document.getElementById("tombol-tema").addEventListener("click", () => {
+      const temaSekarang = localStorage.getItem("tema") || "terang";
+      const temaBaru = temaSekarang === "terang" ? "gelap" : "terang";
+      simpanTema(temaBaru);
+    });
+
+const halaman = {
+  beranda: "<h1>Beranda</h1><p>Selamat datang!</p>",
+  produk: "<h1>Produk</h1><p>Daftar produk kami.</p>",
+  kontak: "<h1>Kontak</h1><p>Hubungi kami di sini.</p>",
+};
+
+function navigasiKe(namaHalaman) {
+  document.getElementById("konten").innerHTML = halaman[namaHalaman];
+  history.pushState({ halaman: namaHalaman }, namaHalaman, "/" + namaHalaman);
+}
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigasiKe(e.target.dataset.halaman);
+  });
+});
+
+window.addEventListener("popstate", (e) => {
+  const namaHalaman = e.state ? e.state.halaman : "beranda";
+  document.getElementById("konten").innerHTML = halaman[namaHalaman];
+});
+
+// Muat halaman awal
+navigasiKe("beranda");
+
+
+document.getElementById("tombol-salin").addEventListener("click", async () => {
+  const teks = document.getElementById("kode-contoh").textContent;
+  const tombol = document.getElementById("tombol-salin");
+
+  await navigator.clipboard.writeText(teks);
+  tombol.textContent = "Tersalin!";
+  setTimeout(() => {
+    tombol.textContent = "Salin";
+  }, 2000);
+});
+
+  </script>
+
+</body>
+</html>
