@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Pengguna</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dashboard Pengguna</h1>
+
+        <div class="card controls">
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="inputPencarian"
+                    placeholder="Cari nama pengguna..."
+                >
+            </div>
+
+            <button id="tombolTambah" class="add-button">
+                + Tambah Pengguna
+            </button>
+
+            <button id="tombolTema" class="theme-button">
+                🌙 Mode Gelap
+            </button>
+
+        </div>
+
+        <div id="loading" class="loading">
+            Memuat data...
+        </div>
+
+        <div id="error" class="error"></div>
+
+        <div class="card">
+
+            <h2>Daftar Pengguna</h2>
+
+            <div id="daftarPengguna" class="user-list"></div>
+
+        </div>
+
+        <div id="detailPengguna"></div>
+
+    </div>
+
+    <div id="modalForm" class="modal">
+        <div class="modal-content card">
+            <h2 id="modalJudul">Tambah Pengguna</h2>
+            <form id="formPengguna">
+                <input type="hidden" id="userIdInput">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" id="namaInput" required placeholder="Masukkan nama...">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" required placeholder="Masukkan email...">
+                </div>
+                <div class="form-group">
+                    <label>Perusahaan</label>
+                    <input type="text" id="perusahaanInput" required placeholder="Masukkan nama perusahaan...">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="submit-button">Simpan</button>
+                    <button type="button" id="tombolBatalModal" class="cancel-button">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
