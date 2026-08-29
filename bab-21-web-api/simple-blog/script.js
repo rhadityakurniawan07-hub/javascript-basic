@@ -227,7 +227,6 @@ formPengguna.addEventListener("submit", async (e) => {
 
     try {
         if (id) {
-            // PUT: Update Data
             const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
@@ -238,7 +237,6 @@ formPengguna.addEventListener("submit", async (e) => {
             const index = users.findIndex(u => u.id === id);
             if (index !== -1) users[index] = { ...users[index], ...dataBaru };
         } else {
-            // POST: Tambah Data Baru
             const res = await fetch("https://jsonplaceholder.typicode.com/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
